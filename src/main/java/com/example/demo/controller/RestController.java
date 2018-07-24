@@ -1,11 +1,9 @@
 package com.example.demo.controller;
-import com.example.demo.modal.Klient;
 import com.example.demo.modal.User;
 import com.example.demo.repository.KlientRepository;
 import com.example.demo.services.KlientService;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,23 +22,20 @@ public class RestController {
     public String allKlients(){
         return klientService.findAll().toString();
     }
-   /* @GetMapping("/all2")
+    /* @GetMapping("/all2")
     public String testMethod() {
         StringBuilder response = new StringBuilder();
 
         Klient klient = new Klient("imie","nazw",585);
-
-
         klientRepository.save(klient);
 
         for(Klient i: klientRepository.findAll()) {
             response.append(i).append("<br>");
         }
-
         return response.toString();
     }*/
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String hello() {
         return "This is Home page";
     }
@@ -51,4 +46,5 @@ public class RestController {
         userService.saveMyUser(user);
         return "User saved!";
     }
+
 }
