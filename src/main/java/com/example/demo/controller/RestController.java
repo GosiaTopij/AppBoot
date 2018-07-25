@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
-    @Autowired //to informuje Springa, że pole powinno zostać przez niego uzupełnione odpowiednim obiektem
+    @Autowired
     private UserService userService;
 
     @Autowired

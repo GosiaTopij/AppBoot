@@ -1,10 +1,7 @@
 package com.example.demo.services;
-
-
 import com.example.demo.modal.User;
 import com.example.demo.repository.UserRepository;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +37,8 @@ public class UserService {
         }
         return null;
     }
+    public User findByUsernameAndPassword(String username, String password) {
+        return userRepository.findByUsernameAndPassword(username, password);
 
-
+    }
 }

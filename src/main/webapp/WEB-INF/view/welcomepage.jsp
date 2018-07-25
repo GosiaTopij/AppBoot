@@ -31,13 +31,20 @@
 
         <c:choose>
             <c:when test="${mode=='MODE_HOME'}">
-
         <div class="container" id="homediv">
             <div class="jumbotron text-center">
                 <h1>Welcome to My Website</h1>
                 <h3>Sign in or Register</h3>
             </div>
         </div>
+            </c:when>
+
+            <c:when test="${mode=='MODE_SUCCESS'}">
+                <div align="center">
+                        <div class= "alert alert-success">
+                            <h5><b>Well done!</b> You successfully logged into this website.</h5>
+                        </div>
+                 </div>
             </c:when>
 
             <c:when test="${mode=='MODE_REGISTER' }">
@@ -169,6 +176,37 @@
                         </div>
                         <div class="form-group ">
                             <input type="submit" class="btn btn-primary" value="Update" />
+                        </div>
+                    </form>
+                </div>
+            </c:when>
+
+            <c:when test="${mode=='MODE_LOGIN' }">
+                <div class="container text-center">
+                    <h3>User Login</h3>
+                    <hr>
+                    <form class="form-horizontal" method="POST" action="/login-user">
+                        <c:if test="${not empty error }">
+                            <div class= "alert alert-danger">
+                                <c:out value="${error }"></c:out>
+                            </div>
+                        </c:if>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Username</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="username"
+                                       value="${user.username }" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Password</label>
+                            <div class="col-md-7">
+                                <input type="password" class="form-control" name="password"
+                                       value="${user.password }" />
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <input type="submit" class="btn btn-primary" value="Login" />
                         </div>
                     </form>
                 </div>

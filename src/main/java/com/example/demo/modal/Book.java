@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.modal;
 
 public class Book {
     private long id;
